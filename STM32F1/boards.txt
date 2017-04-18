@@ -164,6 +164,44 @@ nucleo_f103rb.menu.device_variant.NucleoF103_HSE=Nucleo F103 @ 72 MHz w/ crystal
 nucleo_f103rb.menu.device_variant.NucleoF103_HSE.build.f_cpu=72000000L
 nucleo_f103rb.menu.device_variant.NucleoF103_HSE.build.extra_flags=-DNUCLEO_HSE_CRYSTAL -DMCU_STM32F103RB -mthumb -march=armv7-m -D__STM32F1__
 
+##############################################################
+dapBlaster.name=DAP Blaster
+
+dapBlaster.build.board=DAP_BLASTER
+dapBlaster.vid.0=0x1EAF
+dapBlaster.pid.0=0x0004
+dapBlaster.build.core=maple
+dapBlaster.build.cpu_flags=-DMCU_STM32F103C8 -DSERIAL_USB
+dapBlaster.build.variant=dap_blaster
+dapBlaster.upload.usbID=1EAF:0003
+
+dapBlaster.upload.tool=maple_upload
+dapBlaster.upload.protocol=maple_dfu
+dapBlaster.upload.use_1200bps_touch=false
+dapBlaster.upload.file_type=bin
+dapBlaster.upload.auto_reset=true
+
+dapBlaster.menu.bootloader_version.original = Original (20k RAM. 64k Flash)
+dapBlaster.menu.bootloader_version.original.build.vect=VECT_TAB_ADDR=0x8005000
+dapBlaster.menu.bootloader_version.original.build.ldscript=ld/flash.ld
+dapBlaster.menu.bootloader_version.original.upload.ram.maximum_size=17408
+dapBlaster.menu.bootloader_version.original.upload.flash.maximum_size=65536
+dapBlaster.menu.bootloader_version.original.upload.maximum_size=45056
+dapBlaster.menu.bootloader_version.original.upload.altID=1
+
+dapBlaster.menu.bootloader_version.bootloader20 = Bootloader 2.0 (20k RAM. 64k Flash)
+dapBlaster.menu.bootloader_version.bootloader20.build.vect=VECT_TAB_ADDR=0x8002000
+dapBlaster.menu.bootloader_version.bootloader20.build.ldscript=ld/bootloader_20.ld
+dapBlaster.menu.bootloader_version.bootloader20.upload.ram.maximum_size=20480
+dapBlaster.menu.bootloader_version.bootloader20.upload.flash.maximum_size=57344
+dapBlaster.menu.bootloader_version.bootloader20.upload.maximum_size=57344
+dapBlaster.menu.bootloader_version.bootloader20.upload.altID=2
+
+#-- CPU Clock frequency
+dapBlaster.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
+dapBlaster.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
+
+
 ###################### Generic STM32F103C ########################################
 
 genericSTM32F103C.name=Generic STM32F103C series

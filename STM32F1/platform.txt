@@ -3,6 +3,8 @@
 # For more info:
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
 
+runtime.tools.arm-none-eabi-gcc.path=D:\GNUToolsARMEmbedded\4.8.3
+
 name=STM32 Boards (STM32duino.com)
 version=0.1.2
 
